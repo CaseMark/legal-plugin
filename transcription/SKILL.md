@@ -1,5 +1,5 @@
 ---
-name: case-dev-transcription
+name: transcription
 description: Transcribes audio and video files through case.dev with speaker diarization. Supports MP3, WAV, M4A, FLAC, OGG, WEBM, MP4 up to 5GB. Use when the user mentions "transcribe", "transcription", "deposition recording", "hearing audio", "speaker labels", or needs to convert audio/video to text.
 ---
 
@@ -7,7 +7,7 @@ description: Transcribes audio and video files through case.dev with speaker dia
 
 Audio and video transcription with speaker diarization, ideal for depositions, hearings, and recorded proceedings. Supports MP3, WAV, M4A, FLAC, OGG, WEBM, and MP4 up to 5GB.
 
-Requires the `casedev` CLI. See `case-dev` skill for installation and auth.
+Requires the `casedev` CLI. See `setup` skill for installation and auth.
 
 ## Start a Transcription
 
@@ -36,7 +36,7 @@ casedev transcribe status TRANSCRIPTION_ID --json
 
 Returns: ID, status, vault, source/result object IDs, audio duration, word count, confidence.
 
-Statuses: `queued` → `processing` → `completed` or `failed`.
+Statuses: `queued` -> `processing` -> `completed` or `failed`.
 
 ## Get Result
 

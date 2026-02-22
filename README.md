@@ -6,18 +6,18 @@ Claude Skills that integrate [case.dev](https://case.dev) into Claude agents via
 
 | Skill | What it does |
 |---|---|
-| **case-dev** | Core setup: install CLI, authenticate, diagnostics, focus targets, job tracker, API routes, raw API access |
-| **case-dev-vaults** | Encrypted document vaults: create, upload files/directories, download, list objects, semantic search |
-| **case-dev-ocr** | Document OCR: process PDFs and images, check status, word-level positional data |
-| **case-dev-transcription** | Audio/video transcription: speaker diarization, status tracking, result retrieval |
-| **case-dev-search** | Search: web, legal authorities, case law (query + similarity), patents, vault semantic, skills KB |
+| **setup** | Install CLI, authenticate, diagnostics, focus targets, job tracker, API routes, raw API access |
+| **vaults** | Encrypted document vaults: create, upload files/directories, download, list objects, semantic search |
+| **ocr** | Document OCR: process PDFs and images, check status, word-level positional data |
+| **transcription** | Audio/video transcription: speaker diarization, status tracking, result retrieval |
+| **search** | Web, legal authorities, case law (query + similarity), patents, vault semantic, skills KB |
 
 ## Install
 
 ### Claude.ai
 
 1. Download or clone this repo
-2. Zip each skill folder individually (e.g., `case-dev/`, `case-dev-vaults/`)
+2. Zip each skill folder individually (e.g., `setup/`, `vaults/`)
 3. Upload via **Settings > Capabilities > Skills**
 
 ### Claude Code
@@ -25,11 +25,11 @@ Claude Skills that integrate [case.dev](https://case.dev) into Claude agents via
 Copy skill folders into your Claude Code skills directory:
 
 ```bash
-cp -r case-dev ~/.claude/skills/case-dev
-cp -r case-dev-vaults ~/.claude/skills/case-dev-vaults
-cp -r case-dev-ocr ~/.claude/skills/case-dev-ocr
-cp -r case-dev-transcription ~/.claude/skills/case-dev-transcription
-cp -r case-dev-search ~/.claude/skills/case-dev-search
+cp -r setup ~/.claude/skills/setup
+cp -r vaults ~/.claude/skills/vaults
+cp -r ocr ~/.claude/skills/ocr
+cp -r transcription ~/.claude/skills/transcription
+cp -r search ~/.claude/skills/search
 ```
 
 ### Claude API
@@ -48,6 +48,11 @@ brew install casemark/casedev/casedev
 curl -fsSL https://raw.githubusercontent.com/CaseMark/homebrew-casedev/main/install.sh | sh
 ```
 
+Or run the bundled setup script:
+```bash
+bash setup/scripts/setup.sh
+```
+
 Authenticate with one of:
 
 ```bash
@@ -61,18 +66,20 @@ Verify: `casedev doctor --json`
 ## Structure
 
 ```
-openclaw-casedev/
-├── README.md                          # This file (repo-level, not inside skills)
-├── case-dev/
-│   └── SKILL.md                       # Core setup skill
-├── case-dev-vaults/
-│   └── SKILL.md                       # Vault operations skill
-├── case-dev-ocr/
-│   └── SKILL.md                       # OCR skill
-├── case-dev-transcription/
-│   └── SKILL.md                       # Transcription skill
-└── case-dev-search/
-    └── SKILL.md                       # Search skill
+legal-plugin/
+├── README.md
+├── setup/
+│   ├── SKILL.md
+│   └── scripts/
+│       └── setup.sh
+├── vaults/
+│   └── SKILL.md
+├── ocr/
+│   └── SKILL.md
+├── transcription/
+│   └── SKILL.md
+└── search/
+    └── SKILL.md
 ```
 
 ## Usage Examples

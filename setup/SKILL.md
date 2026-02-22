@@ -1,13 +1,13 @@
 ---
-name: case-dev
-description: Installs and configures the case.dev CLI for legal AI workflows including document vaults, OCR, transcription, and search. Use when the user mentions "case.dev", "casedev", needs to authenticate with case.dev, run diagnostics, set focus targets, list API routes, track jobs, or make raw API calls. Gateway skill for all case-dev-* skills.
+name: setup
+description: Installs and configures the case.dev CLI for legal AI workflows including document vaults, OCR, transcription, and search. Use when the user mentions "case.dev", "casedev", needs to authenticate with case.dev, run diagnostics, set focus targets, list API routes, track jobs, or make raw API calls. Gateway skill for all case.dev skills.
 ---
 
 # case.dev CLI
 
 The `casedev` CLI is the interface to [case.dev](https://case.dev), a legal AI platform providing encrypted document vaults, production OCR, audio transcription, and legal/web/patent search.
 
-This skill covers installation, authentication, diagnostics, and general CLI usage. For domain-specific workflows, see the companion skills: `case-dev-vaults`, `case-dev-ocr`, `case-dev-transcription`, `case-dev-search`.
+This skill covers installation, authentication, diagnostics, and general CLI usage. For domain-specific workflows, see the companion skills: `vaults`, `ocr`, `transcription`, `search`.
 
 ## Installation
 
@@ -17,6 +17,11 @@ brew install casemark/casedev/casedev
 
 # macOS + Linux (shell script)
 curl -fsSL https://raw.githubusercontent.com/CaseMark/homebrew-casedev/main/install.sh | sh
+```
+
+Or run the bundled setup script:
+```bash
+bash scripts/setup.sh
 ```
 
 Verify: `casedev --version`

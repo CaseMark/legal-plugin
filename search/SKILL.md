@@ -1,5 +1,5 @@
 ---
-name: case-dev-search
+name: search
 description: Searches the web, legal databases, case law, patents, and case.dev knowledge base via the casedev CLI. Use when the user mentions "search", "legal research", "find cases", "case law", "patent search", "web search", "fetch URL", "webfetch", "legal skills", or needs to research legal topics, find similar cases, or retrieve web content.
 ---
 
@@ -7,7 +7,7 @@ description: Searches the web, legal databases, case law, patents, and case.dev 
 
 Unified search across web, legal databases, case law, patents, vault contents, and the case.dev skills knowledge base.
 
-Requires the `casedev` CLI. See `case-dev` skill for installation and auth.
+Requires the `casedev` CLI. See `setup` skill for installation and auth.
 
 ## Web Search
 
@@ -107,13 +107,13 @@ Flags:
 
 ## Vault Semantic Search
 
-Search within vault documents (also available via `case-dev-vaults` skill):
+Search within vault documents (also available via `vaults` skill):
 
 ```bash
 casedev search vault "indemnification clause" --vault VAULT_ID --json
 ```
 
-See `case-dev-vaults` skill for full vault search documentation.
+See `vaults` skill for full vault search documentation.
 
 ## Skills Knowledge Base
 
